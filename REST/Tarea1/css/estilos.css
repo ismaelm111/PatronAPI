@@ -1,0 +1,38 @@
+body {
+    background-color: seashell;
+}
+
+h1 {
+    color: brown;
+    font-size: 22px;
+}
+
+#contenedor {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+}
+
+#contenedor div {
+    width: 20%;
+    border: 4px double;
+    padding: 3px;
+    margin: 10px;
+    justify-items: center;
+    border-radius: 20px;
+}
+
+#contenedor h3 {
+    width: auto;
+    text-align: center;
+}
+#contenedor h4 {
+    width: auto;
+    text-align: center;
+}
+
+#contenedor img {
+    height: 200px;
+}
