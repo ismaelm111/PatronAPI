@@ -9,7 +9,7 @@ async function obtenerRepresentante( filtro_ruc ) {
     return new Promise((resolve, reject) => {
         let filtro = {}
         if (filtro_ruc) {
-            filtro = { codigo: filtro_ruc }
+            filtro = { ruc: filtro_ruc }
         }
         Model.find( filtro )            
             .populate({
@@ -60,7 +60,7 @@ async function actualizarRepresentante(dato) {
     nuevo_objeto.email = dato.email 
     nuevo_objeto.domicilio = dato.domicilio 
     nuevo_objeto.telefono = dato.telefono 
-
+    nuevo_objeto.empresas = datos.empresas
     const resultado = await nuevo_objeto.save()
     return resultado
 }
