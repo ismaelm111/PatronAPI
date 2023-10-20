@@ -7,8 +7,7 @@ const controller = require('./components/cliente/controller')
 
 let schema = buildSchema(`
     type Cliente { 
-        _id: ID!     
-        id: Int
+        _id: ID!
         nombre: String
         telefono: String
     }
@@ -17,7 +16,7 @@ let schema = buildSchema(`
         cliente(id: Int): Cliente
     }
     type Mutation {
-        addCliente(id: Int nombre: String, telefono: String): Cliente
+        addCliente(nombre: String, telefono: String): Cliente
     }
 `)
 
@@ -30,7 +29,7 @@ let root = {
         return controller.obtenerCliente(data)        
     },
     addCliente: (data) => {
-        let obj = {'id':data.id, 'nombre': data.nombre, 'telefono': data.telefono }
+        let obj = {'nombre': data.nombre, 'telefono': data.telefono }
         let result = controller.agregarCliente( obj )
         return result
     }
