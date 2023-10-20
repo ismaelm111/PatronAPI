@@ -15,7 +15,7 @@ const empresas_schema = new Schema({
     empresa: {
         type: Schema.ObjectId,
         ref: 'empresa',
-    },    
+    }   
 }, {
     timestamps: true,
 })

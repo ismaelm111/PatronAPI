@@ -35,7 +35,7 @@ async function obtenerRepresentante( filtro_ruc ) {
                     }
                     objeto.empresas = []
                     for (let detalle of elemento.empresas) {
-                        registro = { 
+                        registro = {                             
                             nombre: detalle.empresa.nombre,
                             ruc: detalle.empresa.ruc                            
                         }
