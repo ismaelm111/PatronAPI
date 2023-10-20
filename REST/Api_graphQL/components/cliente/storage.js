@@ -9,7 +9,7 @@ async function obtenerCliente( filtro ) {
     let mi_filtro = {}
 
     if (filtro != null) {
-        mi_filtro = { id: filtro }
+        mi_filtro = { _id: filtro }
     }
     const resultado = await Model.find( mi_filtro )
     return resultado
