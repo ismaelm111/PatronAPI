@@ -7,7 +7,7 @@ const req_string = {
 }
 
 const cliente_schema = new Schema({
-    
+    id: Number,
     nombre: req_string,    
     telefono: req_string
 }) 

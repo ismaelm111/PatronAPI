@@ -8,8 +8,8 @@ async function agregarCliente( dato ) {
 async function obtenerCliente( filtro ) {
     let mi_filtro = {}
 
-    if (filtro.nombre != null) {
-        mi_filtro = { nombre: filtro.nombre }
+    if (filtro != null) {
+        mi_filtro = { id: filtro }
     }
     const resultado = await Model.find( mi_filtro )
     return resultado

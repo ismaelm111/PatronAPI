@@ -6,17 +6,18 @@ const db = require('./db')
 const controller = require('./components/cliente/controller')
 
 let schema = buildSchema(`
-    type Cliente {
+    type Cliente { 
+        _id: ID!     
         id: Int
         nombre: String
         telefono: String
     }
     type Query {
         clientes: [Cliente]
-        cliente(in: Int): Cliente
+        cliente(id: Int): Cliente
     }
     type Mutation {
-        addCliente(nombre: String, telefono: String): Cliente
+        addCliente(id: Int nombre: String, telefono: String): Cliente
     }
 `)
 
@@ -24,12 +25,12 @@ let clientes = []
 let counter = 1
 
 let root = {
-    clientes: () => { return  controller.obtenerCliente() },
+    clientes: () => { return controller.obtenerCliente(null) },
     cliente: (data) => {
         return controller.obtenerCliente(data)        
     },
     addCliente: (data) => {
-        let obj = {'nombre': data.nombre, 'telefono': data.telefono }
+        let obj = {'id':data.id, 'nombre': data.nombre, 'telefono': data.telefono }
         let result = controller.agregarCliente( obj )
         return result
     }
